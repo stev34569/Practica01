@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaft.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{css/estilos.css}"/>
+    </head>
+    <body>
+        <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <h2>Lista de clientes</h2>
+        <a th:href="@{/nuevoEstado}">Nuevo Estado</a>
+        <br>
+        <br>
+        <div th:if="${estados != null and !estados.empty}">
+         <table border="1">
+             <thead>
+                 <tr>
+                     <th>pais</th>
+                     <th>capital</th>
+                     <th>playa</th>
+                     <th>descripcion</th>
+                     <th>hotel</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr th:each="item : ${estados}">
+                     <td th:text="${item.pais}"></td>
+                     <td th:text="${item.capital}"></td>
+                     <td th:text="${item.playa}"></td>
+                     <td th:text="${item.descripcion}"></td>
+                     <td th:text="${item.hotel}"></td>
+                     <td><a th:href="@{/modificarEstado/} + ${item.idEstado}">Modificar</a></td>
+                     <td><a th:href="@{/eliminarEstado/} + ${item.idEstado}">Eliminar</a></td>
+                 </tr>
+             </tbody>
+         </table>
+         </div>
+         <div th:if="${estados == null or estados.empty}">
+             La lista  esta vacia
+         </div>
+        <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>
