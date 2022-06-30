@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaft.org"
+      xmlns="http://www.w3.org/199/xhtml">
+    <head>
+        <title>Paises</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:fragment="header"/>
+        <h2>Datos de Estado</h2>
+        <a th:href="@{/}">Regresar</a>
+        <br>
+        <br>
+        <form th:action="@{/guardarEstado}" 
+              method="post" 
+              th:object="${estado}">
+            <input type="hidden" name="idEstado" th:field="*{idEstado}" />
+            <label for="pais">Pais </label>
+            <input type="text" id="estado" name="pais" th:field="*{pais}"/>
+            <br>
+            <label for="capital">Capital </label>
+            <input type="text" id="capital" name="capital" th:field="*{capital}"/>
+            <br>
+            <label for="playa">Playa </label>
+            <input type="text" id="playa" name="playa" th:field="*{playa}"/>
+            <br>
+            <label for="descripcion">Descripcion </label>
+            <input type="text" id="descripcion" name="descripcion" th:field="*{descripcion}"/>
+            <br>
+            <label for="hotel">Hotel </label>
+            <input type="text" id="hotel" name="hotel" th:field="*{hotel}"/>
+            <br>
+            <input type="submit" name="Guardar" value="Guardar"/>
+        </form>
+    </body>
+</html>
