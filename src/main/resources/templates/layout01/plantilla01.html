@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaft.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2 th:fragment="h2">Contactenos</h2>
+        <br>
+        <div th:fragment="div">
+                <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <label class="required" for="nombre:">Nombre:</label><br />
+                        <input id="name" class="input" name="nombre:" type="text" value="" size="30" /><br />
+                    </div>
+                    <div class="row">
+                        <label class="required" for="email">Email:</label><br />
+                        <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+                    </div>
+                    <div class="row">
+                        <label  for="mensaje">Mensaje</label><br />
+                        <textarea id="mensaje" class="input" name="Mensaje:" rows="7" cols="30"></textarea><br />
+                    </div>
+
+                    <input id="submit_button" type="submit" value="Enviar email" />
+                </form>
+            </div>
+         
+    </body>
+</html>
